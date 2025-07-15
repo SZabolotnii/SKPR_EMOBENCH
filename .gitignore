@@ -1,0 +1,42 @@
+# Virtual Environment
+skpr_venv/
+venv/
+
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+.cache/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE
+.idea/
+.vscode/
+.cache/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db 
+
+final_svu_comparison_results/
+comparison_results/
+*.npz
