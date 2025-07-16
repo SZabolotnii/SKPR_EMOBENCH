@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Classic_vs_kunchenko_EmoEvent.py
+"""Classic_vs_kunchenko_EN.py
 
 A focused experiment to compare classic ML features (TF-IDF) against
 Kunchenko features and their hybrid combination, using SVM as the classifier.

@@ -18,35 +18,33 @@ The project is organized into several Python scripts, each corresponding to a sp
 
 ### Ukrainian Dataset Experiments (EMOBENCH-UA)
 
-*   `Base_EMOBENCH-UA.py`:
+*   `Base_test_emotions_hybrid_UA.py`:
     *   **Purpose:** Runs the main experiment comparing the baseline (thresholded probabilities) with the hybrid model.
     *   **Paper Reference:** **Table 1**.
     *   **Output:** Saves predictions and features to `experiment_outputs.npz` for further analysis.
 
-*   `Analyze_results_EMOBENCH-UA.py`:
+*   `Analysis_base_test_result_UA.py`:
     *   **Purpose:** Performs post-analysis on the results from `Base_EMOBENCH-UA.py`. It runs an ablation study (Kunchenko features only) and a bootstrap test for statistical significance.
     *   **Paper Reference:** **Table 1** (Ablation result) and the p-value mentioned in **Section 3.1**.
 
-*   `Basis_function_search_EMOBENCH-UA.py`:
+*   `Basis_function_search_UA.py`:
     *   **Purpose:** Conducts a grid search to find the optimal basis function parameters (`n` and `alpha`) and compares Logistic Regression and SVM classifiers.
     *   **Paper Reference:** **Section 3.3.1**.
 
-*   `Supervised_vs_unsupervised_EMOBENCH-UA.py`:
+*   `Supervised_vs_unsupervised_UA.py`:
     *   **Purpose:** Compares the supervised Kunchenko feature space against the unsupervised PCA feature space. It also generates the t-SNE visualizations.
     *   **Paper Reference:** **Figure 1** and the related analysis.
 
 ### English Dataset Experiments (EmoEvent)
 
-*   `Classic_vs_kunchenko_EmoEvent.py`:
+*   `Classic_vs_kunchenko_EN.py`:
     *   **Purpose:** Implements **Scenario A** (no model fine-tuning). Compares the classic TF-IDF + SVM baseline against Kunchenko features on "raw" RoBERTa embeddings.
     *   **Paper Reference:** **Section 3.2, Table 2**.
 
-*   `Basis_function_search_EmoEvent.py`:
+*   `Base_test_emotions_basis_search_EN.py`:
     *   **Purpose:** Implements **Scenario B** (with model fine-tuning). Fine-tunes a RoBERTa model and then performs a grid search for the optimal basis functions, comparing Logistic Regression and SVM.
     *   **Paper Reference:** **Section 3.3.2**. The results from this script are used to populate **Table 3**.
 
-*   `RoBERTa_trained_EmoEvent.py`:
-    *   **Purpose:** A simplified version of the basis search script. It fine-tunes RoBERTa and applies a fixed Kunchenko basis. It can be considered a development script or a single run from the more comprehensive search script.
 
 ## How to Run the Experiments
 
@@ -78,20 +76,14 @@ The scripts can be run independently. They will automatically download the neces
 
 1.  Run the main experiment to generate predictions:
     ```bash
-    python Base_EMOBENCH-UA.py
+    python Base_test_emotions_hybrid_UA.py
     ```
 2.  Run the analysis script to get the ablation study and significance test:
     ```bash
-    python Analyze_results_EMOBENCH-UA.py
+    python Analysis_base_test_result_UA.py.py
     ```
 
-**Example: To reproduce the basis function search for the English dataset:**
-
-```bash
-python Basis_function_search_EmoEvent.py
-```
-
-The scripts will create output directories (e.g., `kunchenko_optimization_results`, `final_svu_comparison_results`) to store cached features and plots.
+The scripts will create output directories (e.g., `emo_event_search_results`, `comparison_results`) to store cached features and plots.
 
 ## Acknowledgment
 

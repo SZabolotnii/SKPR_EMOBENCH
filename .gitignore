@@ -39,4 +39,5 @@ Thumbs.db
 
 final_svu_comparison_results/
 comparison_results/
+emo_event_search_results/
 *.npz

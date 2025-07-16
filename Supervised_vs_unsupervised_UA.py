@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Supervised_vs_unsupervised_EMOBENCH-UA.py
+"""Supervised_vs_unsupervised_UA.py
 
 A final, elegant experiment comparing two dimensionality reduction techniques
 with the same number of output features:
