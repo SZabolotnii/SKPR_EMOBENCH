@@ -24,11 +24,11 @@ The project is organized into several Python scripts, each corresponding to a sp
     *   **Output:** Saves predictions and features to `experiment_outputs.npz` for further analysis.
 
 *   `Analysis_base_test_result_UA.py`:
-    *   **Purpose:** Performs post-analysis on the results from `Base_EMOBENCH-UA.py`. It runs an ablation study (Kunchenko features only) and a bootstrap test for statistical significance.
+    *   **Purpose:** Performs post-analysis on the results from `Base_test_emotions_hybrid_UA.py`. It runs an ablation study (Kunchenko features only) and a bootstrap test for statistical significance.
     *   **Paper Reference:** **Table 1** (Ablation result) and the p-value mentioned in **Section 3.1**.
 
 *   `Basis_function_search_UA.py`:
-    *   **Purpose:** Conducts a grid search to find the optimal basis function parameters (`n` and `alpha`) and compares Logistic Regression and SVM classifiers.
+    *   **Purpose:** Conducts a grid search to find the optimal basis function and compares Logistic Regression and SVM classifiers.
     *   **Paper Reference:** **Section 3.3.1**.
 
 *   `Supervised_vs_unsupervised_UA.py`:
